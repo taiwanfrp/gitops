@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: taiwanfrp-backend-svc
+  namespace: taiwanfrp-ns
+spec:
+  selector:
+    app: taiwanfrp-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+    nodePort: 32150
+  type: NodePort

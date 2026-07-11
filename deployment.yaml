@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taiwanfrp-backend
+  namespace: taiwanfrp-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taiwanfrp-backend
+  template:
+    metadata:
+      labels:
+        app: taiwanfrp-backend
+    spec:
+      containers:
+      - name: taiwanfrp-backend
+        image: ghcr.io/taiwanfrp/backend:initial-tag
+        ports:
+        - containerPort: 8000
+
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "1000m"
+            memory: "512Mi"
+
+        envFrom:
+        - configMapRef:
+            name: taiwanfrp-backend-config
+        - secretRef:
+            name: taiwanfrp-backend-secret
+
+      imagePullSecrets:
+      - name: ghcr-creds
