@@ -15,3 +15,4 @@ data:
   COOKIE_PATH: "/"
   COOKIE_SAMESITE: "lax"
   COOKIE_SECURE: "True"
+  SITE_URL: "https://demo.taiwanfrp.me"
