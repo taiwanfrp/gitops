@@ -12,3 +12,4 @@ spec:
     targetPort: 8000
     nodePort: 32150
   type: NodePort
+  ipFamilyPolicy: RequireDualStack
