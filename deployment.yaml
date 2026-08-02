@@ -18,6 +18,13 @@ spec:
         image: ghcr.io/taiwanfrp/backend:e24539f
         ports:
         - containerPort: 8000
+        args:
+        - "fastapi"
+        - "run"
+        - "--host=::"
+        - "--port=8000"
+        - "--proxy-headers"
+        - "--forwarded-allow-ips=$(FORWARDED_ALLOW_IPS)"
 
         resources:
           requests:
