@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: taiwanfrp-backend
-        image: ghcr.io/taiwanfrp/backend:5f718ec
+        image: ghcr.io/taiwanfrp/backend:3db5402
         ports:
         - containerPort: 8000
         args:
