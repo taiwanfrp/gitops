@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    image: ghcr.io/taiwanfrp/backend:3b2ba1f
+    image: ghcr.io/taiwanfrp/backend:b5e8159
     container_name: taiwanfrp-backend
     restart: always
     ports:
