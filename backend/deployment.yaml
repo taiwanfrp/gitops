@@ -4,7 +4,6 @@ metadata:
   name: taiwanfrp-backend
   namespace: taiwanfrp-ns
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: taiwanfrp-backend
@@ -13,6 +12,13 @@ spec:
       labels:
         app: taiwanfrp-backend
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app: taiwanfrp-backend
       containers:
       - name: taiwanfrp-backend
         image: ghcr.io/taiwanfrp/backend:021f3c8
