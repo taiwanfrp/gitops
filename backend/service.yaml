@@ -10,6 +10,5 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8000
-    nodePort: 32150
-  type: NodePort
+  type: ClusterIP
   ipFamilyPolicy: RequireDualStack
