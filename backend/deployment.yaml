@@ -21,7 +21,7 @@ spec:
         args:
         - "fastapi"
         - "run"
-        - "--host=::"
+        - "--host="
         - "--port=8000"
         - "--proxy-headers"
         - "--forwarded-allow-ips=$(FORWARDED_ALLOW_IPS)"
